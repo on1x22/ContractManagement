@@ -11,16 +11,7 @@ namespace CMBackend.Domain
         {
             this.repository = repository;
         }
-        /*public Task AddContracts(List<Contract> contracts)
-        {
-            repository.
-        }
-
-        public Task AddContractStages(List<ContractStage> contractStages)
-        {
-            throw new NotImplementedException();
-        }*/
-
+        
         public async Task<bool> UploadFileAsync(List<Contract> contracts, List<ContractStage> contractStages)
         {
             await repository.AddContractsToDbAsync(contracts);
