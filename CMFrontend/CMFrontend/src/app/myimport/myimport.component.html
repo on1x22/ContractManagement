@@ -1,34 +1,36 @@
-<h3>Страница импорта</h3>
- 
+<h3 class="import-header">Импорт данных</h3>
 
-
+<div class="impot-form">
   <form method="post" enctype="multipart/form-data" class="input-form">
-	<label class="input-file">
-	   	<span class="input-file-text" type="text" accept=".xlsx" [textContent]="fileName != null ? fileName : 'Выберите файл с расширением *.xls или *.xlsx'">hret</span>
-	   	<input type="file" name="file"  (change)="onFileSelected($event)" placeholder="Upload your file"/>        
- 	   	<span class="input-file-btn">...</span>
- 	</label>
+    <label class="input-file">
+      <span class="input-file-text" type="text" accept=".xlsx" [textContent]="fileName != null ? fileName : 'Выберите файл с расширением *.xlsx'">hret</span>
+      <input type="file" name="file" (change)="onFileSelected($event)" placeholder="Upload your file" />
+      <span class="input-file-btn">...</span>
+    </label>
 
-  <div class="file-upload" >
-    <button color="primary" class="upload-btn"
-      (click)="uploadFile()">
-      Загрузить файл      
-    </button>
+    <div class="file-upload">
+      <button color="primary" class="upload-btn"
+              (click)="uploadFile()">
+        Загрузить файл
+      </button>
+    </div>
+  </form>
+  <div class="messages">
+    <div class="alert alert-danger message-text" role="alert" *ngIf="isCorrectFileType == false">
+      Для загрузки необходимо выбрать файл с расширением *.xlsx
+    </div>
+
+    <div class="alert alert-success message-text" role="alert" *ngIf="isCorrectFileType == true">
+      Файл имеет корректный тип
+    </div>
+
+    <div class="alert alert-danger message-text" role="alert" *ngIf="isCorrectUploaded == false">
+      {{uploadMessage}}
+    </div>
+
+    <div class="alert alert-success message-text" role="alert" *ngIf="isCorrectUploaded == true">
+      {{uploadMessage}}
+    </div>
   </div>
-</form>
 
-<div class="alert alert-danger" role="alert" *ngIf="isCorrectFileType == false">
-  Для загрузки необходимо выбрать файл с расширением *.xls или *.xlsx
-</div>
-
-<div class="alert alert-success" role="alert" *ngIf="isCorrectFileType == true">
-  Файл имеет корректный тип
-</div>
-
-<div class="alert alert-danger" role="alert" *ngIf="isCorrectUploaded == false">
-  При загрузке файла на сервер произошли ошибки
-</div>
-
-<div class="alert alert-success" role="alert" *ngIf="isCorrectUploaded == true">  
-  Файл загружен на сервер
 </div>
