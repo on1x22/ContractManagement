@@ -10,16 +10,12 @@ import { MyindexComponent } from './myindex/myindex.component';
 import { MyimportComponent } from './myimport/myimport.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-//import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
-// определение маршрутов
 const appRoutes: Routes = [
   { path: 'Contracts/Index', component: MyindexComponent },
   { path: 'Contracts/Import', component: MyimportComponent },
   {
     path: '**',
     redirectTo: '/Contracts/Index',
-    //component: AppComponent,
     pathMatch: 'full'
   }
 ];
@@ -36,9 +32,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     FormsModule,
     NgbModule,
-    //NgbModule
   ],
   providers: [],
-  bootstrap: [AppComponent/*MyindexComponent*/]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

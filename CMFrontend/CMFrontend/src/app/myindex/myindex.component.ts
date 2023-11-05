@@ -11,31 +11,16 @@ import { ContractStage } from '../model/ContractStage';
 export class MyindexComponent {
   contracts!: Contract[];
   contractStages!: ContractStage[];
-  //contractStages!: IContractStage[];
 
-  constructor(private http: HttpClient/*, @Inject('BASE_URL') baseUrl: string*/) {
-    //this.contracts = await this.httpClient.get<IContract[]>('/api/Contracts/GetContracts').toPromise();
-    //this.getContracts();
-
-    //http.get<Contract[]>('/api/Contracts/GetContracts').subscribe(result => {
-    //  this.contracts = result;
-    //}, error => console.error(error));
-
+  constructor(private http: HttpClient) {
     this.getContracts();
     this.getContractStages();
-    //let dasf = 0;
   }
 
   getContracts() {
     this.http.get<Contract[]>('/api/Contracts/GetContracts').subscribe(result => {
       this.contracts = result;
     });
-    //node fetch module is loaded to be able to make use of fetch function
-    //let fds = await fetch('/api/Contracts/GetContracts');
-
-    //let dgsdg = await this.http.get('/api/Contracts/GetContracts').toPromise();
-
-    //let fdf = 0;
   }
 
   getContractStages() {
@@ -45,9 +30,3 @@ export class MyindexComponent {
   }
 
 }
-
-/*export interface Contract {
-  contractCode: string;
-  contractName: string;
-  client: string;
-}*/
