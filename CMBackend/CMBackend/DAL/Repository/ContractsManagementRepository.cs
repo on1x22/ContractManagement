@@ -26,10 +26,5 @@ namespace CMBackend.DAL.Repository
 
         public async Task SaveChangesAsync() =>
             await context.SaveChangesAsync();
-
-        /*public Task<bool> UploadFile()
-        {
-            throw new NotImplementedException();
-        }*/
     }
 }

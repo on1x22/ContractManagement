@@ -15,9 +15,7 @@ namespace CMBackend.Domain
         public async Task<List<Contract>> GetContractsAsync() =>
             await repository.GetContractsFromDbAsync();
 
-
         public async Task<List<ContractStage>> GetContractStagesAsync() =>
             await repository.GetContractStagesFromDbAsync();
-
     }
 }
