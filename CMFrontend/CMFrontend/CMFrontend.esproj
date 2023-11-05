@@ -9,4 +9,8 @@
     <!-- Folder where production build objects will be placed -->
     <BuildOutputFolder>$(MSBuildProjectDirectory)\dist\CMFrontend</BuildOutputFolder>
   </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="src\app\model\" />
+    <Folder Include="src\app\myindex\" />
+  </ItemGroup>
 </Project>

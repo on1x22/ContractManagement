@@ -1,0 +1,23 @@
+.contracts-header {
+    text-align: center;
+}
+
+.contracts-table {
+  margin-left: 5%;
+  margin-right: 5%;
+  border: 1px solid black;
+  border-radius: 5px;
+  border-collapse: separate;
+}
+
+.contract-stages-header {
+  text-align: center;
+}
+
+.contract-stages-table {
+  margin-left: 5%;
+  margin-right: 5%;
+  border: 1px solid black;
+  border-radius: 5px;
+  border-collapse: separate;
+}
