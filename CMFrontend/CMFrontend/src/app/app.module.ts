@@ -1,17 +1,44 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+
+import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
+import { MyindexComponent } from './myindex/myindex.component';
+import { MyimportComponent } from './myimport/myimport.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+//import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+// определение маршрутов
+const appRoutes: Routes = [
+  { path: 'Contracts/Index', component: MyindexComponent },
+  { path: 'Contracts/Import', component: MyimportComponent },
+  {
+    path: '**',
+    redirectTo: '/Contracts/Index',
+    //component: AppComponent,
+    pathMatch: 'full'
+  }
+];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MyindexComponent,
+    MyimportComponent
   ],
   imports: [
-    BrowserModule, HttpClientModule
+    BrowserModule,
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes),
+    FormsModule,
+    NgbModule,
+    //NgbModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent/*MyindexComponent*/]
 })
 export class AppModule { }

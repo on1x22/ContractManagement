@@ -1,0 +1,45 @@
+<h2 class="contracts-header">Договоры</h2>
+
+<div class="contracts-table">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Contract code</th>
+        <th scope="col">Contract name</th>
+        <th scope="col">Client</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let contract of contracts; index as i">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ contract.contractCode }}</td>
+        <td>{{ contract.contractName }}</td>
+        <td>{{ contract.client }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2 class="contract-stages-header">Этапы договора</h2>
+
+<div class="contract-stages-table">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Stagen name</th>
+        <th scope="col">Start date</th>
+        <th scope="col">End date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let contractStage of contractStages; index as i">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ contractStage.stageName }}</td>
+        <td data-date>{{ contractStage.startDate }}</td>
+        <td >{{ contractStage.endDate }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
